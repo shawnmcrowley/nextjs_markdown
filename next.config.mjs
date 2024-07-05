@@ -1,14 +1,20 @@
+import remarkGfm from 'remark-gfm'
+import createMDX from '@next/mdx'
+ 
 /** @type {import('next').NextConfig} */
-
-import nextPWA from 'next-pwa';
-
-const withPWA = nextPWA({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development'
-  })
-
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+  // Configure `pageExtensions`` to include MDX files
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  // Optionally, add any other Next.js config below
+}
+ 
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
+})
+ 
+// Wrap MDX and Next.js config with each other
+export default withMDX(nextConfig)
