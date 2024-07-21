@@ -14,4 +14,4 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-AA Micro Service FrontEnd for Publishing Documentation via Next MarkDown
+A Micro Service FrontEnd for Publishing Documentation via Next MarkDown
